@@ -61,7 +61,8 @@ class PlayList {
     /** Removes the last track from this list. If the list is empty, does nothing. */
      public void removeLast() {
         if(size != 0){
-            this.tracks[size - 1] = 0;    
+            this.tracks[size - 1] = null;   
+            size--; 
         }
     }
     
@@ -126,6 +127,7 @@ class PlayList {
     public void remove(String title) {
         if (indexOf(title) != -1) {
             remove(indexOf(title));
+            
         }
     }
 
