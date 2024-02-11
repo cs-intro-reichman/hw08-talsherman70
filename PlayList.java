@@ -113,7 +113,7 @@ class PlayList {
      *  does nothing and returns -1. */
     public void remove(int i) {
         if(size != 0){
-            tracks[i] = 0;
+            tracks[i] = null;
             for(int j = i + 1; j < size; j++){
                 tracks[j - 1] = tracks[j];
             }
@@ -142,7 +142,7 @@ class PlayList {
      public void add(PlayList other) {
         if (this.maxSize >= other.getSize() + this.size){
             for (int i = 0; i < other.getSize(); i++){
-                this.tracks[size] = other.getTrack(j);
+                this.tracks[size] = other.getTrack(i);
                 this.size++;
             }
         }
