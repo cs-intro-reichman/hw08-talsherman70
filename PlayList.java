@@ -80,12 +80,14 @@ class PlayList {
     public int indexOf(String title) {
         title.toLowerCase();
         int index = -1;
-        for (int i = 0; i < this.size; i++){
-            
+        boolean equal = false;
+        int i = 0;
+        while(i < size && equal == false){         
             if(title.equals(this.tracks[i].getTitle().toLowerCase())){
                index = i;
-                break;
+               equal = true;
             }
+            i++;
         }
         return index;
     }
@@ -98,7 +100,7 @@ class PlayList {
      *  returns true. */
     public boolean add(int i, Track track) {
         if(i >= 0 && size != maxSize){
-            for(int j = size; j >= i; j++){
+            for(int j = size - 1; j >= i; j++){
                 this.tracks[j + 1] = tracks[j];
             }
             tracks[i] = track;
