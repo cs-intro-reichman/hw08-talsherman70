@@ -181,7 +181,7 @@ class PlayList {
         for(int i = 0; i < size; i++){
                 int shortIndex = minIndex(i);
                 Track temp = tracks[i];
-                tracks[i] = shortIndex;
+                tracks[i] = tracks[shortIndex];
                 tracks[shortIndex] = temp;
              }
          }
