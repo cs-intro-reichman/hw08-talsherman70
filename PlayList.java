@@ -96,9 +96,9 @@ class PlayList {
      *  returns true. */
     public boolean add(int i, Track track) {
         if(i >= 0 && size != maxSize){
-            for(int j = size - 1; j >= i; j++){
+            for(int j = size - 1; j >= i; j--){
                 this.tracks[j + 1] = tracks[j];
-            }
+            }    
             tracks[i] = track;
             size++;
             return true;
